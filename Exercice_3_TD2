@@ -1,0 +1,91 @@
+/* Fait par : Mouad HAKIMI
+Enoncé :
+Écrire un algorithme qui demande à l’utilisateur de choisir un code d’entrée, puis afficher les propriétés géométriques 
+d’une figure.
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14159265358979323846
+
+void main (){
+    
+	//Declaration des variables
+    int choix ;
+    float a,b,c ;
+    
+	//Les differents choix + enonce
+    printf("Les codes d%centr%ce sont :\n", 39, 130);
+    printf("1  - Pour le triangle\n");
+    printf("2  - Pour le carr%c \n",130);
+    printf("10 - Pour le cercle\n");
+    printf("3  - Pour le cube\n");
+    printf("11 - Pour le cylindre\n");
+    printf("12 - Pour la sph%cre\n\n",138);
+    printf("Veuillez entrer un nombre valide : ");
+    scanf("%d",&choix);
+    
+	switch (choix) { // Etudes de chaque cas a l aide de la fonction switch
+        
+		case 1 : // Triangle
+            printf("\nSaisissez la mesure des diff%crents cot%cs du triangle :", 130, 130);
+            scanf("%f %f %f", &a, &b, &c);
+            printf("\nNom de la figure : Triangle\n");
+            printf("Nombre de cot%cs du triangle : 3\n", 130);
+            printf("Circonf%crence : %.2f\n", 130, a + b + c);
+            printf("Aire : %.2f\n", (a * b) / 2);
+            printf("Volume : 0\n");
+        break ; 
+        
+        case 2 :// Carre
+        	printf("\nSaisissez la mesure d%cun cot%c du carr%c :", 39, 130, 130);
+            scanf("%f", &a);
+            printf("\nNom de la figure : Carr%c\n", 130);
+            printf("Nombre de cot%cs du carr%c : 4\n", 130, 130);
+            printf("Circonf%crence : %.2f\n", 130, 4 * a);
+            printf("Aire : %.2f\n", pow(a,2) );
+            printf("Volume : 0\n");
+        break ;
+        
+        case 10 : // cercle
+        	printf("\nSaisissez la mesure du rayon du cercle :");
+            scanf("%f", &a);
+            printf("\nNom de la figure : Cercle\n");
+            printf("Nombre de cot%cs du cercle : 0\n", 130);
+            printf("Circonf%crence : %.2f\n", 130, 2 * PI * a);
+            printf("Aire : %.2f\n", PI * pow (a,2) );
+            printf("Volume : 0\n");
+        break ;
+        
+        case 3 : // cube
+        	printf("\nSaisissez la mesure d%cun cot%c du cube :", 39, 130);
+            scanf("%f", &a);
+            printf("\nNom de la figure : Cube\n");
+            printf("Nombre de cot%cs du cube : 12\n", 130);
+            printf("Circonf%crence : %.2f\n", 130, 12 * a);
+            printf("Aire : %.2f\n", 6 * pow (a,2) );
+            printf("Volume : %.2f\n", pow(a,3) );
+        break ;
+        
+        case 11 : // cylindre
+        	printf("\nSaisissez la mesure du rayon du cylindre et sa hauteur :");
+            scanf("%f %f", &a, &b);
+            printf("\nNom de la figure : Cylindre\n");
+            printf("Nombre de cot%cs du cylindre : 0\n", 130);
+            printf("Circonf%crence : %.2f\n", 130, 4 * PI * a);
+            printf("Aire : %.2f\n", 2 * PI * a * ( a + b) );
+            printf("Volume : %.2f\n",PI * pow(a,2) * b);
+        break ;
+        
+        case 12 : // sphere
+        	printf("\nSaisissez la mesure du rayon de la sph%cre :",138);
+            scanf("%f", &a);
+            printf("\nNom de la figure : Sph%cre\n",138);
+            printf("Nombre de cot%cs de la sph%cre : 0\n", 130, 138);
+            printf("Circonf%crence : Ind%cfinie\n", 130, 130);
+            printf("Aire : %.2f\n", 4 * PI * pow(a,2) );
+            printf("Volume : %.2f\n", ( 4 / 3 ) * PI * pow(a,2) );
+        break ;
+    }
+}
